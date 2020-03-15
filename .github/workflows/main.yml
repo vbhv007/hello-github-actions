@@ -2,10 +2,10 @@ name: A workflow for my Hello World file
 on: push
 jobs:
   build:
-    # The type of runner that the job will run on
+    name: Hello world action
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - uses: ./action-a
+        with:
+          MY_NAME: "Mona"
